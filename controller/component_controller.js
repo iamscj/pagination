@@ -22,6 +22,7 @@ export const getACDetails = async (req, res) => {
         const rowCount = parseInt(result.rows[0].count, 10);
         const totalPages = Math.ceil(rowCount / itemsPerPage);
         console.log(data.rows)
+        data = data.rows
         res.json({ data, totalPages });
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
